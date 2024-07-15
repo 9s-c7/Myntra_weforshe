@@ -104,3 +104,11 @@ Companies can utilize the Trendify feature to gather user feedback and make info
 ### User POV
 
 Users enjoy a community-driven shopping experience through the Trendify feature. They can interact with designs, leave comments, and receive notifications. The feedback provided by users helps businesses promote popular designs and reduce the promotion of less popular ones, enhancing the shopping experience on Myntra.
+
+## License
+
+All Rights Reserved. You may not use, distribute, or modify this code without explicit permission from the author.
+
+## Contact
+
+For permissions or inquiries, please contact the owner of this Repository.
