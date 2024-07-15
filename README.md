@@ -25,6 +25,10 @@ The `company_pov` folder contains the implementation of the Trendify feature for
      cd backend
      ```
    - Change the `CLUSTER_URI` in the configuration file to your MongoDB URI.
+   - Install the necessary dependencies:
+     ```sh
+     npm install
+     ```
 
 4. **Run the Server:**
    - Start the backend server:
@@ -67,6 +71,10 @@ The `user_pov` folder allows users to implement the Trendify feature. This featu
      cd backend
      ```
    - Change the `CLUSTER_URI` in the configuration file to your MongoDB URI.
+   - Install the necessary dependencies:
+     ```sh
+     npm install
+     ```
 
 3. **Run the Server:**
    - Start the backend server:
