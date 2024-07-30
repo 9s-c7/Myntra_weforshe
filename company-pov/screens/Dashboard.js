@@ -44,7 +44,6 @@ const Dashboard = () => {
                 <View style={styles.dashboard}>
                     {items
                         .filter(item => item.name === "TheVintageStore" && item.completed === 0)
-
                         .map(item => {
                             const total = item.Win.length + item.Mid.length + item.Loser.length;
                             const winPercentage = calculatePercentage(item.Win.length, total);
@@ -60,24 +59,36 @@ const Dashboard = () => {
                                     <View style={styles.info}>
                                         <View style={styles.statContainer}>
                                             <Text style={styles.label}>W</Text>
-                                            <View style={styles.progressBar}>
-                                                <View style={[styles.progress, { width: `${winPercentage}%`, backgroundColor: '#F31CB1' }]} />
+                                            <View style={styles.progressBarContainer}>
+                                                <View style={[styles.progressBar, { backgroundColor: '#ddd' }]}>
+                                                    <View style={[styles.progress, { width: `${winPercentage}%`, backgroundColor: '#F31CB1' }]}>
+                                                        <Text style={styles.progressTextInside}>{winPercentage.toFixed(0)}%</Text>
+                                                    </View>
+                                                </View>
+                                                <Text style={styles.numberText}>{item.Win.length}</Text>
                                             </View>
-                                            <Text style={[styles.progressText, { color: '#F31CB1' }]}>{winPercentage.toFixed(0)}%</Text>
                                         </View>
                                         <View style={styles.statContainer}>
                                             <Text style={styles.label}>M</Text>
-                                            <View style={styles.progressBar}>
-                                                <View style={[styles.progress, { width: `${midPercentage}%`, backgroundColor: '#FF9130' }]} />
+                                            <View style={styles.progressBarContainer}>
+                                                <View style={[styles.progressBar, { backgroundColor: '#ddd' }]}>
+                                                    <View style={[styles.progress, { width: `${midPercentage}%`, backgroundColor: '#FF9130' }]}>
+                                                        <Text style={styles.progressTextInside}>{midPercentage.toFixed(0)}%</Text>
+                                                    </View>
+                                                </View>
+                                                <Text style={styles.numberText}>{item.Mid.length}</Text>
                                             </View>
-                                            <Text style={[styles.progressText, { color: '#FF9130' }]}>{midPercentage.toFixed(0)}%</Text>
                                         </View>
                                         <View style={styles.statContainer}>
                                             <Text style={styles.label}>L</Text>
-                                            <View style={styles.progressBar}>
-                                                <View style={[styles.progress, { width: `${losePercentage}%`, backgroundColor: '#F25512' }]} />
+                                            <View style={styles.progressBarContainer}>
+                                                <View style={[styles.progressBar, { backgroundColor: '#ddd' }]}>
+                                                    <View style={[styles.progress, { width: `${losePercentage}%`, backgroundColor: '#F25512' }]}>
+                                                        <Text style={styles.progressTextInside}>{losePercentage.toFixed(0)}%</Text>
+                                                    </View>
+                                                </View>
+                                                <Text style={styles.numberText}>{item.Loser.length}</Text>
                                             </View>
-                                            <Text style={[styles.progressText, { color: '#F25512' }]}>{losePercentage.toFixed(0)}%</Text>
                                         </View>
                                     </View>
                                 </View>
@@ -144,21 +155,34 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         marginVertical: 4,
     },
-    progressBar: {
-        height: 10,
+    progressBarContainer: {
+        flexDirection: 'row',
+        alignItems: 'center',
         flex: 1,
-        backgroundColor: '#ddd',
-        borderRadius: 5,
-        marginRight: 8,
+    },
+    progressBar: {
+        height: 16,
+        flex: 1,
+        borderRadius: 100,
+        marginHorizontal: 4,
+        justifyContent: 'center',
     },
     progress: {
         height: '100%',
-        borderRadius: 5,
+        borderRadius: 100,
+        justifyContent: 'center',
     },
-    progressText: {
+    progressTextInside: {
+        color: '#fff',
         fontSize: 10,
+        textAlign: 'left',
         fontWeight: 'bold',
-        width: 24,
+        paddingLeft: 6,
+    },
+    numberText: {
+        fontSize: 14,
+        fontWeight: 'bold',
+        marginLeft: 8,
     },
     label: {
         fontSize: 16,
